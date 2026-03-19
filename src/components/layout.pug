@@ -10,6 +10,12 @@ html(lang='en')
     meta(property='og:image', content=meta.ogImage || site.global.ogImage)
     link(rel='stylesheet', href='/src/styles/global.css')
     title #{ meta.title || 'Welcome' } | #{ site.global.name }
+    script(
+      src="https://hma-chat-bot.vercel.app/widget/chat-widget.js" 
+      data-chatbot-key="39bfb7c3-1a0e-4434-9486-626e30414006" 
+      data-api-url="https://hma-chat-bot.vercel.app/api"
+      defer
+    )
   body.bg-slate-50.text-slate-900
     include ./navbar.pug
     main
