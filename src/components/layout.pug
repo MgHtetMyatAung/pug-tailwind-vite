@@ -3,12 +3,13 @@ doctype html
 
 html(lang='en')
   head
-    - const pageInfo = site.pages[pageKey] || {};
+    - const meta = site[pageKey] || {};
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description', content=pageInfo.desc)
+    meta(name='description', content=meta.description || 'Default Site Description')
+    meta(property='og:image', content=meta.ogImage || site.global.ogImage)
     link(rel='stylesheet', href='/src/styles/global.css')
-    title #{ pageInfo.title } | #{ site.global.name }
+    title #{ meta.title || 'Welcome' } | #{ site.global.name }
   body.bg-slate-50.text-slate-900
     include ./navbar.pug
     main

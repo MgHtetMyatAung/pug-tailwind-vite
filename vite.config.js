@@ -7,7 +7,6 @@ import { globSync } from 'glob';
 import { siteData } from './src/utils/siteData.js';
 
 import fs from 'fs';
-import { navigation } from './src/constants/navigation.js';
 import { products } from './src/mock/products.js';
 
 
@@ -57,7 +56,8 @@ export default defineConfig(({ command }) => {
       },
       pugPlugin({
         pugLocals: {
-          site: { ...siteData, navigation, products },
+          site: siteData,
+          products: products,
           isProd
         }
       })

@@ -23,7 +23,7 @@ block content
         class='sm:grid-cols-2 lg:grid-cols-3',
         style='animation-delay: 0.2s'
       )
-        each product in site.products
+        each product in products
           +productCard(product)
 
   section.py-20.bg-slate-900.mx-4.mb-12.overflow-hidden.relative(class='rounded-[3rem]')
