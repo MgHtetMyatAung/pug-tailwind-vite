@@ -26,9 +26,7 @@ export default defineConfig(({ command }) => {
   const getPages = () => {
     const pages = { main: resolve(__dirname, 'index.html') };
     const pageFiles = globSync('src/pages/**/*.pug', { cwd: __dirname });
-    const devFiles = globSync('src/dev/**/*.pug', { cwd: __dirname });
-
-    [...pageFiles, ...devFiles].forEach((file) => {
+    pageFiles.forEach((file) => {
       const name = basename(file, '.pug');
       pages[name] = resolve(__dirname, 'index.html');
     });

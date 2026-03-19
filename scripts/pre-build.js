@@ -5,7 +5,7 @@ import { globSync } from 'glob';
 const projectRoot = process.cwd();
 const indexTemplate = fs.readFileSync(path.resolve(projectRoot, 'index.html'), 'utf8');
 
-const pugFiles = globSync('src/{pages,dev}/**/*.pug', { cwd: projectRoot });
+const pugFiles = globSync('src/pages/**/*.pug', { cwd: projectRoot });
 
 pugFiles.forEach(file => {
   const name = path.basename(file, '.pug');
