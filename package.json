@@ -1,0 +1,31 @@
+{
+  "name": "awsome-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node scripts/generate-tailwind-scan.js && vite",
+    "build": "node scripts/generate-tailwind-scan.js && node scripts/pre-build.js && vite build && rm -f about.html products.html contact.html library.html",
+
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{pug,js,css}\"",
+    "lint": "prettier --check \"src/**/*.{pug,js,css}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "@prettier/plugin-pug": "^3.4.2",
+    "@tailwindcss/vite": "^4.2.2",
+    "autoprefixer": "^10.4.27",
+    "glob": "^13.0.6",
+    "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
+    "pug": "^3.0.4",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.1",
+    "vite-plugin-pug-transformer": "^1.0.8"
+  }
+}

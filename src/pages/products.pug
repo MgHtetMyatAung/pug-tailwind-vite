@@ -1,0 +1,48 @@
+extends ../components/layout.pug
+include ../components/productCard.pug
+
+block content
+  section.pb-20.pt-28
+    .container.mx-auto.px-4
+      .max-w-3xl.mb-12
+        span.inline-block.px-4.py-1.bg-blue-50.text-blue-600.rounded-full.text-sm.font-bold.mb-4.animate-fade-in
+          | Our Collection
+        h1.font-extrabold.text-slate-900.mb-6.bg-clip-text.text-transparent.bg-gradient-to-r.from-blue-600.to-indigo-600.animate-fade-in.text-4xl(
+          class='md:text-6xl'
+        )
+          | Premium Products
+        p.text-lg.text-slate-600.max-w-2xl.animate-fade-in(
+          style='animation-delay: 0.1s'
+        )
+          | Explore our curated selection of high-end essentials designed for modern lifestyles. Quality meets minimalist design in every piece.
+
+      .grid.grid-cols-1.gap-8.animate-fade-in(
+        class='sm:grid-cols-2 lg:grid-cols-3',
+        style='animation-delay: 0.2s'
+      )
+        each product in site.products
+          +productCard(product)
+
+  section.py-20.bg-slate-900.mx-4.mb-12.overflow-hidden.relative(class='rounded-[3rem]')
+    .absolute.inset-0.opacity-20
+      .absolute.bg-blue-500.rounded-full(
+        class='top-[-10%] left-[-10%] w-[40%] h-[40%] blur-[120px]'
+      )
+      .absolute.bg-indigo-500.rounded-full(
+        class='bottom-[-10%] right-[-10%] w-[40%] h-[40%] blur-[120px]'
+      )
+
+    .container.mx-auto.px-4.relative.z-10.text-center
+      h2.font-bold.text-white.mb-6.text-3xl(class='md:text-4xl') Ready to Elevate Your Style?
+      p.text-slate-400.max-w-xl.mx-auto.mb-10 Get exclusive early access to our upcoming limited edition drops and member-only rewards.
+      .flex.flex-col.gap-4.justify-center(class='sm:flex-row')
+        a.text-white.rounded-2xl.font-bold.transition-all.px-8.py-4.bg-blue-600.shadow-xl(
+          href='/contact',
+          class='hover:bg-blue-700 shadow-blue-900/40'
+        )
+          | Contact Sales
+        a.text-white.rounded-2xl.font-bold.transition-all.border.px-8.py-4.backdrop-blur-md(
+          href='#',
+          class='bg-white/10 hover:bg-white/20 border-white/20'
+        )
+          | View Catalouge

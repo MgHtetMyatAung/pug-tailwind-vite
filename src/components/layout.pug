@@ -1,0 +1,17 @@
+block vars
+doctype html
+
+html(lang='en')
+  head
+    - const pageInfo = site.pages[pageKey] || {};
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content=pageInfo.desc)
+    link(rel='stylesheet', href='/src/styles/global.css')
+    title #{ pageInfo.title } | #{ site.global.name }
+  body.bg-slate-50.text-slate-900
+    include ./navbar.pug
+    main
+      block content
+    script(type='module', src='/src/app/main.js')
+    block scripts

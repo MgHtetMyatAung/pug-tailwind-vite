@@ -1,0 +1,96 @@
+extends ../components/layout.pug
+
+block vars
+  - const pageKey = 'contact';
+
+block content
+  .flex.items-center.justify-center.px-4.py-20(class='min-h-[80vh]')
+    .max-w-6xl.w-full.grid.grid-cols-1.gap-12.bg-white.shadow-2xl.overflow-hidden(
+      class='lg:grid-cols-2 rounded-[3rem]'
+    )
+      // Left Column: Contact Info
+      .p-12.bg-slate-900.text-white.flex.flex-col.justify-between
+        div
+          h1.text-4xl.font-bold.mb-6 Let's get in touch
+          p.text-slate-400.text-lg.mb-12
+            | Have a project in mind? We'd love to hear from you. Send us a message and we'll respond within 24 hours.
+
+          .space-y-8
+            .flex.items-center.gap-6.group
+              .w-12.h-12.rounded-full.bg-slate-800.flex.items-center.justify-center.transition-colors(
+                class='group-hover:bg-blue-600'
+              )
+                | 📧
+              div
+                p.text-sm.text-slate-500.uppercase.flex Email
+                p.text-lg.font-medium hello@awsome.project
+
+            .flex.items-center.gap-6.group
+              .w-12.h-12.rounded-full.bg-slate-800.flex.items-center.justify-center.transition-colors(
+                class='group-hover:bg-indigo-600'
+              )
+                | 📍
+              div
+                p.text-sm.text-slate-500.uppercase.flex Location
+                p.text-lg.font-medium San Francisco, CA
+
+        .mt-12.pt-12.border-t.border-slate-800.flex.gap-6
+          // Social placeholders
+          .w-10.h-10.rounded-lg.bg-slate-800.cursor-pointer.flex.items-center.justify-center(
+            class='hover:bg-slate-700'
+          ) 𝕏
+          .w-10.h-10.rounded-lg.bg-slate-800.cursor-pointer.flex.items-center.justify-center(
+            class='hover:bg-slate-700'
+          ) 💼
+          .w-10.h-10.rounded-lg.bg-slate-800.cursor-pointer.flex.items-center.justify-center(
+            class='hover:bg-slate-700'
+          ) 🐙
+
+      // Right Column: Form
+      .p-12(class='lg:p-16')
+        form.space-y-6
+          .grid.grid-cols-1.gap-6(class='md:grid-cols-2')
+            div
+              label.block.text-sm.font-semibold.text-slate-700.mb-2(for='name') Full Name
+              input#name.w-full.px-6.py-4.rounded-2xl.bg-slate-50.border-transparent.transition-all.outline-none(
+                type='text',
+                placeholder='John Doe',
+                class='focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500'
+              )
+            div
+              label.block.text-sm.font-semibold.text-slate-700.mb-2(
+                for='email'
+              ) Email Address
+              input#email.w-full.px-6.py-4.rounded-2xl.bg-slate-50.border-transparent.transition-all.outline-none(
+                type='email',
+                placeholder='john@example.com',
+                class='focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500'
+              )
+
+          div
+            label.block.text-sm.font-semibold.text-slate-700.mb-2(
+              for='subject'
+            ) Subject
+            select#subject.w-full.px-6.py-4.rounded-2xl.bg-slate-50.border-transparent.transition-all.outline-none.appearance-none(,
+              class='focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500'
+            )
+              option General Inquiry
+              option Project Proposal
+              option Career
+              option Other
+
+          div
+            label.block.text-sm.font-semibold.text-slate-700.mb-2(
+              for='message'
+            ) Message
+            textarea#message.w-full.px-6.py-4.rounded-2xl.bg-slate-50.border-transparent.transition-all.outline-none.resize-none(
+              rows='5',
+              placeholder='Tell us about your project...',
+              class='focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500'
+            )
+
+          button.w-full.py-5.bg-blue-600.text-white.rounded-2xl.font-bold.text-lg.transition-all.transform(
+            type='submit',
+            class='hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-200 active:scale-[0.98]'
+          )
+            | Send Message

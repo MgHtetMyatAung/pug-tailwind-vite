@@ -1,0 +1,36 @@
+mixin productCard(product)
+  .group.relative.bg-white.rounded-2xl.shadow-sm.transition-all.duration-300.overflow-hidden.border.border-slate-100.h-full.flex.flex-col(
+    class='hover:shadow-xl'
+  )
+    .aspect-square.overflow-hidden.bg-slate-100.relative
+      img.w-full.h-full.object-cover.transition-transform.duration-500(
+        src=product.image,
+        alt=product.name,
+        class='group-hover:scale-110'
+      )
+      .absolute.top-3.right-3
+        span.px-2.py-1.backdrop-blur-sm.text-xs.font-medium.text-slate-600.rounded-lg.shadow-sm(
+          class='bg-white/90'
+        )= product.category
+
+    .p-5.flex.flex-col.flex-grow
+      h3.text-lg.font-bold.text-slate-900.mb-1= product.name
+      p.text-sm.text-slate-500.mb-4.flex-grow Premium quality #{ product.category.toLowerCase() } for daily use.
+
+      .flex.items-center.justify-between.mt-auto
+        span.text-xl.font-extrabold.text-blue-600= product.price
+        button.p-2.bg-blue-600.text-white.rounded-xl.transition-colors.shadow-lg.shadow-blue-200(
+          class='group/btn hover:bg-blue-700'
+        )
+          svg.w-5.h-5.transition-transform(
+            fill='none',
+            stroke='currentColor',
+            viewBox='0 0 24 24',
+            class='group-hover/btn:translate-x-0.5'
+          )
+            path(
+              stroke-linecap='round',
+              stroke-linejoin='round',
+              stroke-width='2',
+              d='M14 5l7 7m0 0l-7 7m7-7H3'
+            )

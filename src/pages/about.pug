@@ -1,0 +1,58 @@
+extends ../components/layout.pug
+
+block vars
+  - const pageKey = 'about';
+
+block content
+  .flex.flex-col.items-center.justify-center.px-4.py-20(class='min-h-[80vh]')
+    // Hero Section
+    .text-center.mb-16
+      h1.text-5xl.font-extrabold.mb-6.bg-clip-text.text-transparent.bg-gradient-to-r.from-blue-600.to-indigo-600.animate-fade-in(
+        class='md:text-6xl'
+      )
+        | About Our Journey
+      p.text-xl.text-slate-600.max-w-2xl.mx-auto
+        | We are a team of passionate developers and designers dedicated to building the future of the web with speed, elegance, and precision.
+
+    // Features / Mission Grid
+    .grid.grid-cols-1.gap-8.max-w-6xl.w-full(class='md:grid-cols-3')
+      .p-8.rounded-3xl.backdrop-blur-xl.border.shadow-xl.transition-all.duration-300.group(
+        class='bg-white/40 border-white/20 hover:shadow-2xl'
+      )
+        .w-12.h-12.bg-blue-500.rounded-2xl.mb-6.flex.items-center.justify-center.text-white.text-2xl.transition-transform(
+          class='group-hover:scale-110'
+        )
+          | 🚀
+        h3.text-xl.font-bold.mb-4 Our Mission
+        p.text-slate-600.leading-relaxed
+          | To empower creators with tools that make high-performance web development accessible and enjoyable for everyone.
+
+      .p-8.rounded-3xl.backdrop-blur-xl.border.shadow-xl.transition-all.duration-300.group(
+        class='bg-white/40 border-white/20 hover:shadow-2xl'
+      )
+        .w-12.h-12.bg-indigo-500.rounded-2xl.mb-6.flex.items-center.justify-center.text-white.text-2xl.transition-transform(
+          class='group-hover:scale-110'
+        )
+          | 💡
+        h3.text-xl.font-bold.mb-4 Our Vision
+        p.text-slate-600.leading-relaxed
+          | A web where every interaction is instantaneous, every design is stunning, and every developer is a superhero.
+
+      .p-8.rounded-3xl.backdrop-blur-xl.border.shadow-xl.transition-all.duration-300.group(
+        class='bg-white/40 border-white/20 hover:shadow-2xl'
+      )
+        .w-12.h-12.bg-purple-500.rounded-2xl.mb-6.flex.items-center.justify-center.text-white.text-2xl.transition-transform(
+          class='group-hover:scale-110'
+        )
+          | ✨
+        h3.text-xl.font-bold.mb-4 Our Values
+        p.text-slate-600.leading-relaxed
+          | Speed, Simplicity, and Visual Excellence are at the core of everything we build and every line of code we write.
+
+    // CTA Section
+    .mt-20.text-center
+      a.px-8.py-4.bg-slate-900.text-white.rounded-full.font-bold.transition-colors.shadow-lg.shadow-slate-200(
+        href='/contact',
+        class='hover:bg-slate-800'
+      )
+        | Let's Work Together
